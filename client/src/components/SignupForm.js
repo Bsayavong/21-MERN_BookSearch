@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
@@ -19,7 +18,6 @@ const SignupForm = () => {
   const [showAlert, setShowAlert] = useState(false);
 
   const [createUser] = useMutation(ADD_USER);
-  const [login, { error, data }] = useMutation(LOGIN_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -37,23 +35,33 @@ const SignupForm = () => {
     }
 
     try {
-      console.log(userFormData);
+
+      const { data } = await addUser({
+        variables: { ...userFormData }
+      });
+      console.log(data);
+
+      Auth.login(data.addUser.token);
+
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+  
+      setUserFormData({
+       username: '',
+       email: '',
+       password: '',
+     });
+   };
+   
+      /* console.log(userFormData);
       // const response = await createUser(userFormData);
       const newUser = await createUser({
         variables: { ...userFormData }
       })
       console.log(newUser);
 
-      // const { data } = await login({
-      //   variables: { ...userFormData },
-      // });
-      // // console.log(data);
-      // if (!data) {
-      //   throw new Error('something went wrong!');
-      // }
-
-      // const { token, user } = await response.json();
-      // console.log(user);
       Auth.login(data.createUser.token);
     } catch (err) {
       console.error(err);
@@ -65,7 +73,7 @@ const SignupForm = () => {
       email: '',
       password: '',
     });
-  };
+  }; */
 
   return (
     <>
