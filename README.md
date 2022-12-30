@@ -61,6 +61,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 ---
 
 Link to live application is deployed to Heroku and is available [here.](https://mernbooksearch-20.herokuapp.com/)
+Please note application is still crashing upon loading and will be resolved shortly.
 
 ## Installation
 
