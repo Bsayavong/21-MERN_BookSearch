@@ -4,9 +4,9 @@
 
 ---
 
-The task of this assignment was to refactor the code to be a GraphQL API built with the Apollo Server. 
+This project was originally a RESTful api, but was refactored to use GraphQL and Apollo.
 
-The application was built using the MERN Stack, original codebase was provided by UW coding bootcamp.
+The application was built using the MERN Stack to search for books utilizing a Google API, original codebase was provided by UW coding bootcamp.
 
 ## User Story
 
@@ -60,7 +60,7 @@ THEN I am logged out of the site and presented with a menu with the options Sear
 
 ---
 
-Link to live application is deployed to Heroku and is available [here.](https://mernbooksearch-20.herokuapp.com/)
+Link to live application is deployed to Heroku and is available [here.](https://mernbooksearch-21.herokuapp.com/)
 
 
 ## Installation
